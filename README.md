@@ -21,7 +21,7 @@ required both modules...                 bundle.coffee:3
 
 you can click on on the coffee file to watching source code
 
-also, to brows coffee script source code you can open developer tools, Sources tab and refresh with command+r
+also, to brows coffee script source code you can open developer tools, Sources tab and refresh files tree with command+r
 
 read more
 - https://www.npmjs.com/package/gulp-coffeeify
