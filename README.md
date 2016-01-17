@@ -11,7 +11,7 @@ npm start
 
 wait until page opens
 
-2. press command+alt+i (F12 on windows) to open javascript consol and find log
+2. press command+alt+i (F12 on windows) to open javascript console and find such logs
 
 ```shell
 required module 1...                    module1.coffee:1
