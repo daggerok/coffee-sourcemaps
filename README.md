@@ -3,7 +3,7 @@ coffee-sourcemaps [![build](https://travis-ci.org/daggerok/coffee-sourcemaps.svg
 
 ### this is an example, how to build stage with coffeescript source maps (:
 
-1. build and run serber
+1. build and run server
 
 ```
 npm start
