@@ -1,5 +1,5 @@
 ###
-  gulp + coffeeify (coffee source maps)
+  gulp + gulp-coffeeify (coffee source maps)
 ###
 
 {gulp, connect, open} = require './common'
