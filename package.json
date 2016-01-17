@@ -1,7 +1,7 @@
 {
   "name": "coffee-sourcemaps",
   "version": "1.0.0",
-  "description": "coffee source maps with modulized gulp coffee-script browserify coffeeify",
+  "description": "coffeescript source maps with modulized gulp using node browserify coffeeify",
   "main": "index.js",
   "scripts": {
     "pregulp": "npm install",
@@ -13,6 +13,7 @@
     "url": "git+https://github.com/daggerok/coffee-sourcemaps.git"
   },
   "keywords": [
+    "node",
     "gulp",
     "modulized",
     "require-dir",
