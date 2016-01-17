@@ -2,9 +2,8 @@
   gulp + gulp-coffeeify (coffee source maps)
 ###
 
-{gulp, connect, open} = require './common'
-gcoffeeify            = require 'gulp-coffeeify'
-sourcemaps            = require 'gulp-sourcemaps'
+{gulp, connect, open, sourcemaps} = require './common'
+gcoffeeify = require 'gulp-coffeeify'
 
 gulp.task 'coffeeify', ->
   gulp.src('./app/scripts/**/*.coffee')
