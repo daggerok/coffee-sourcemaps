@@ -1,7 +1,7 @@
 {
   "name": "coffee-sourcemaps",
   "version": "1.0.0",
-  "description": "coffee source maps with gulp coffee-script browserify coffeeify",
+  "description": "coffee source maps with modulized gulp coffee-script browserify coffeeify",
   "main": "index.js",
   "scripts": {
     "pregulp": "npm install",
@@ -15,12 +15,15 @@
   },
   "keywords": [
     "gulp",
+    "modulized",
+    "require-dir",
     "coffee",
     "gulp-coffee",
+    "coffeeify",
     "browserify",
     "vinyl-buffer",
     "vinyl-source-stream",
-    "coffeeify",
+    "sourcemaps",
     "connect",
     "gulp-connect",
     "gulp-open",
@@ -41,6 +44,7 @@
     "gulp-connect": "^2.3.1",
     "gulp-open": "^1.0.0",
     "gulp-sourcemaps": "^1.6.0",
+    "require-dir": "^0.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
