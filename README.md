@@ -16,7 +16,7 @@ wait until page opens
 ```shell
 required module 1...                    module1.coffee:1
 required module 2...                    module2.coffee:1 
-required both modules...                 bundle.coffee:7
+required both modules...                 bundle.coffee:3
 ```
 
 you can click on on the coffee file to watching source code
