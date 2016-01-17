@@ -1,7 +1,5 @@
 gulp       = require 'gulp'
 connect    = require 'gulp-connect'
-open       = require 'gulp-open'
-sourcemaps = require 'gulp-sourcemaps'
 
 module.exports = gulp.task 'connect', ->
   connect.server
@@ -11,5 +9,10 @@ module.exports = gulp.task 'connect', ->
 module.exports = 
   gulp: gulp
   connect: connect
-  open: open
-  sourcemaps: sourcemaps
+  open: require 'gulp-open'
+  sourcemaps: require 'gulp-sourcemaps'
+  path:
+    bundle: 'bundle.js'
+    src: './app/scripts/'
+    any: './app/scripts/**/*.coffee'
+    url: 'http://localhost:8080'

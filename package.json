@@ -6,8 +6,7 @@
   "scripts": {
     "pregulp": "npm install",
     "gulp": "gulp --require coffee-script/register",
-    "start": "npm run gulp watch",
-    "test": "npm run gulp browatch"
+    "start": "npm run gulp watchify"
   },
   "repository": {
     "type": "git",

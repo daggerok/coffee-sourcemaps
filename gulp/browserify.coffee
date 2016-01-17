@@ -2,22 +2,22 @@
   gulp + gulp-coffee + browserify (js source maps)
 ###
 
-{gulp, connect, open, sourcemaps} = require './common'
+{gulp, path, sourcemaps, connect, open} = require './common'
 coffee     = require 'gulp-coffee'
 browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 buffer     = require 'vinyl-buffer'
 
 gulp.task 'coffee', ->
-  gulp.src './app/scripts/**/*.coffee'
-          , base: './app/scripts/'
+  gulp.src path.any
+          , base: path.src
     .pipe(do coffee)
     .pipe(gulp.dest './dist')
 
 gulp.task 'browserify', ['coffee'], ->
-  bundler = browserify 'dist/bundle.js'
+  bundler = browserify "dist/#{path.bundle}"
   bundler.bundle()
-    .pipe(source 'bundle.js')
+    .pipe(source path.bundle)
     .pipe(do buffer)
     .pipe(do sourcemaps.init)
     .pipe(do sourcemaps.write)
@@ -30,5 +30,5 @@ gulp.task 'connect', ->
     livereload: true
 
 gulp.task 'browatch', ['browserify', 'connect'], ->
-  gulp.watch './app/scripts/**/*.coffee', ['browserify']
-  gulp.src('./').pipe open uri: 'http://localhost:8080'
+  gulp.watch path.any, ['browserify']
+  gulp.src('./').pipe open uri: path.url

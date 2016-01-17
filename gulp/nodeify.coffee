@@ -2,10 +2,10 @@
   node + browserify + coffeeify (coffee source maps)
 ###
 
-{gulp, connect, open} = require './common'
-coffeeify             = require 'coffeeify'
-browserify            = require 'browserify'
-fs                    = require 'fs'
+{gulp, path, connect, open} = require './common'
+browserify = require 'browserify'
+coffeeify  = require 'coffeeify'
+fs         = require 'fs'
 
 gulp.task 'nodeify', (done) ->
   bundle = browserify 
@@ -14,10 +14,10 @@ gulp.task 'nodeify', (done) ->
   bundle.transform coffeeify,
     bare: false
     header: false
-  bundle.add './app/scripts/bundle.coffee'
+  bundle.add "#{path.src}bundle.coffee"
   bundle.bundle (error, result) ->
     throw error if error?
-    fs.writeFile  './bundle.js', result
+    fs.writeFile  "./#{path.bundle}", result
 
   do connect.reload
   do done
@@ -28,5 +28,5 @@ gulp.task 'connect', ->
     livereload: true
 
 gulp.task 'watchify', ['nodeify', 'connect'], ->
-  gulp.watch './app/scripts/**/*.coffee', ['nodeify']
-  gulp.src('./').pipe open uri: 'http://localhost:8080'
+  gulp.watch path.any, ['nodeify']
+  gulp.src('./').pipe open uri: path.url

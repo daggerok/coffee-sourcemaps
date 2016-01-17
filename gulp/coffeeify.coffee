@@ -2,11 +2,11 @@
   gulp + gulp-coffeeify (coffee source maps)
 ###
 
-{gulp, connect, open, sourcemaps} = require './common'
+{gulp, path, sourcemaps, connect, open} = require './common'
 gcoffeeify = require 'gulp-coffeeify'
 
 gulp.task 'coffeeify', ->
-  gulp.src('./app/scripts/**/*.coffee')
+  gulp.src(path.any)
     .pipe gcoffeeify
       options:
         debug: true
@@ -26,5 +26,5 @@ gulp.task 'connect', ->
     livereload: true
 
 gulp.task 'watch', ['default', 'connect'], ->
-  gulp.watch './app/scripts/**/*.coffee', ['coffeeify']
-  gulp.src('./').pipe open uri: 'http://localhost:8080'
+  gulp.watch path.any, ['coffeeify']
+  gulp.src('./').pipe open uri: path.url
