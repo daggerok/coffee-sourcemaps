@@ -2,12 +2,11 @@
   gulp + gulp-coffee + browserify (js source maps)
 ###
 
-{gulp, connect, open} = require './common'
-coffee                = require 'gulp-coffee'
-browserify            = require 'browserify'
-source                = require 'vinyl-source-stream'
-buffer                = require 'vinyl-buffer'
-sourcemaps            = require 'gulp-sourcemaps'
+{gulp, connect, open, sourcemaps} = require './common'
+coffee     = require 'gulp-coffee'
+browserify = require 'browserify'
+source     = require 'vinyl-source-stream'
+buffer     = require 'vinyl-buffer'
 
 gulp.task 'coffee', ->
   gulp.src './app/scripts/**/*.coffee'
