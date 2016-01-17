@@ -20,10 +20,10 @@ required both modules...                 bundle.coffee:3
 ```
 
 you can click on on the coffee file to watching source code
+
 also, to brows coffee script source code you can open developer tools, Sources tab and refresh with command+r
 
 read more
-
 - https://www.npmjs.com/package/gulp-coffeeify
 - https://github.com/jnordberg/coffeeify
 - http://browserify.org/
