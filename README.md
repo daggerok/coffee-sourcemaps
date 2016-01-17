@@ -1,4 +1,4 @@
-coffee-sourcemaps [![build](https://travis-ci.org/daggerok/coffee-sourcemaps.svg?branch=master)](https://travis-ci.org/daggerok/coffee-sourcemaps.svg?branch=master)
+coffee-sourcemaps [![build](https://travis-ci.org/daggerok/coffee-sourcemaps.svg?branch=master)](https://travis-ci.org/daggerok/coffee-sourcemaps)
 =================
 
 ### this is an example, how to build stage with coffeescript source maps (:
@@ -19,7 +19,7 @@ required module 2...                    module2.coffee:1
 required both modules...                 bundle.coffee:7
 ```
 
-you can click on on of the coffee file to watching coffee source code
+you can click on on the coffee file to watching source code
 also, to brows coffee script source code you can open developer tools, Sources tab and refresh with command+r
 
 read more
