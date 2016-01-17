@@ -1,7 +1,7 @@
 coffee-sourcemaps [![build](https://travis-ci.org/daggerok/coffee-sourcemaps.svg?branch=master)](https://travis-ci.org/daggerok/coffee-sourcemaps)
 =================
 
-### this is an example, how to build stage with coffeescript source maps (:
+### this is an example, how to build stage bundle.js with coffeescript source maps (:
 
 1. build and run server
 
