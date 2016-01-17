@@ -3,14 +3,14 @@
 ###
 
 gulp       = require 'gulp'
-coffeeify  = require 'gulp-coffeeify'
+gcoffeeify = require 'gulp-coffeeify'
 sourcemaps = require 'gulp-sourcemaps'
 connect    = require 'gulp-connect'
 open       = require 'gulp-open'
 
 gulp.task 'coffeeify', ->
   gulp.src('./app/scripts/**/*.coffee')
-    .pipe coffeeify
+    .pipe gcoffeeify
       options:
         debug: true
         paths: [
@@ -30,6 +30,36 @@ gulp.task 'connect', ->
 
 gulp.task 'watch', ['default', 'connect'], ->
   gulp.watch './app/scripts/**/*.coffee', ['coffeeify']
+  gulp.src('./').pipe open uri: 'http://localhost:8080'
+
+###
+  node + browserify + coffeeify (coffee source maps)
+###
+
+gulp       = require 'gulp'
+coffeeify  = require 'coffeeify'
+browserify = require 'browserify'
+fs         = require 'fs'
+connect    = require 'gulp-connect'
+open       = require 'gulp-open'
+
+gulp.task 'nodeify', (done) ->
+  bundle = browserify 
+    extensions: ['.coffee']
+    debug: true
+  bundle.transform coffeeify,
+    bare: false
+    header: false
+  bundle.add './app/scripts/bundle.coffee'
+  bundle.bundle (error, result) ->
+    throw error if error?
+    fs.writeFile  './bundle.js', result
+
+  do connect.reload
+  do done
+
+gulp.task 'watchify', ['nodeify', 'connect'], ->
+  gulp.watch './app/scripts/**/*.coffee', ['nodeify']
   gulp.src('./').pipe open uri: 'http://localhost:8080'
 
 ###

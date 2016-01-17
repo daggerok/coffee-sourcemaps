@@ -4,4 +4,7 @@ cache:
   directories:
     - node_modules
 node_js: 5
-script: npm run gulp
+script:
+  - npm run gulp coffeeify
+  - npm run gulp nodeify
+  - npm run gulp browserify
